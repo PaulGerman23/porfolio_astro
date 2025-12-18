@@ -1,0 +1,50 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { projects } from "../data/projects";
+
+const completeApps = projects.filter((p) => p.category === "complete-apps");
+const smallProjects = projects.filter((p) => p.category === "small-projects");
+---
+
+<MainLayout title="Projects | Paul German">
+    <div class="py-8">
+        <div class="mb-12">
+            <div class="mb-12">
+                <h1 class="text-3xl font-bold text-white mb-4">
+                    <span data-i18n="projects.title"></span>
+                </h1>
+                <p class="text-text-muted" data-i18n="projects.subtitle"></p>
+            </div>
+
+            <div class="mb-16">
+                <SectionTitle
+                    title="apps-completas"
+                    i18nKey="projects.complete"
+                />
+                <div class="flex flex-col gap-8">
+                    {
+                        completeApps.map((project) => (
+                            <ProjectCard {...project} />
+                        ))
+                    }
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <SectionTitle
+                    title="proyectos-pequeños"
+                    i18nKey="projects.small"
+                />
+                <div class="flex flex-col gap-8">
+                    {
+                        smallProjects.map((project) => (
+                            <ProjectCard {...project} />
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>

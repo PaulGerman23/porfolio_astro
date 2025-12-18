@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<div
+    class="fixed left-4 top-0 bottom-0 hidden xl:flex flex-col items-center w-12 z-[100]"
+>
+    <!-- Line from top -->
+    <div class="w-px h-52 bg-text-muted opacity-50"></div>
+
+    <!-- Square at the tip -->
+    <div
+        class="w-2 h-2 border border-text-muted bg-bg-dark my-2 transform rotate-45"
+    >
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex flex-col gap-6 mt-4">
+        <a
+            href="https://github.com/PaulGerman23"
+            target="_blank"
+            class="text-text-muted hover:text-accent-violet transition-colors duration-300 p-2 hover:bg-accent-violet/10 rounded-md"
+        >
+            <Icon name="fa-brands:github" class="w-6 h-6" />
+        </a>
+        <a
+            href="https://www.linkedin.com/in/paul-german-mamani/"
+            target="_blank"
+            class="text-text-muted hover:text-accent-violet transition-colors duration-300 p-2 hover:bg-accent-violet/10 rounded-md"
+        >
+            <Icon name="fa-brands:linkedin" class="w-6 h-6" />
+        </a>
+        <a
+            href="mailto:paulmamani10@gmail.com?subject=Portfolio%20Contact"
+            title="Email"
+            class="text-text-muted hover:text-accent-violet transition-colors duration-300 p-2 hover:bg-accent-violet/10 rounded-md"
+        >
+            <Icon name="mdi:email" class="w-6 h-6" />
+        </a>
+    </div>
+</div>

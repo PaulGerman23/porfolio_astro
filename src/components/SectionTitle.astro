@@ -1,0 +1,9 @@
+---
+const { title, i18nKey } = Astro.props;
+---
+
+<div class="section-title">
+    <span data-i18n={i18nKey}>{title}</span>
+    <div class="h-px bg-accent-violet w-32 ml-4 hidden md:block opacity-50">
+    </div>
+</div>

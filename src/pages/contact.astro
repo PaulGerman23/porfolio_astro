@@ -1,0 +1,59 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="Contact | Paul German">
+    <section class="py-12" id="contact">
+        <SectionTitle title="contacto" i18nKey="nav.contact" />
+
+        <div class="flex flex-col md:flex-row gap-12 items-start">
+            <!-- Left Column: Intro Text + Form -->
+            <div class="flex-1">
+                <p class="text-text-muted mb-8" data-i18n="contact.text"></p>
+
+                <!-- Detailed Form Section -->
+                <div class="">
+                    <h3 class="text-white text-xl mb-4">
+                        <span data-i18n="contact.form.title"></span>
+                    </h3>
+                    <ContactForm />
+                </div>
+            </div>
+
+            <!-- Right Column: Side Info (Direct Contact) -->
+            <div class="flex-1 flex flex-col gap-6">
+                <div class="border border-border-subtle p-4 w-max">
+                    <h4
+                        class="text-white font-bold mb-4"
+                        data-i18n="contact.sidebar.title"
+                    >
+                    </h4>
+                    <div class="flex flex-col gap-3">
+                        <a
+                            href="mailto:paulmamani10@gmail.com"
+                            class="flex items-center gap-2 text-text-muted hover:text-white transition-colors"
+                        >
+                            <Icon
+                                name="mdi:email-outline"
+                                class="w-5 h-5 text-accent-violet"
+                            />
+                            <span data-i18n="contact.email"></span>
+                        </a>
+                        <span
+                            class="flex items-center gap-2 text-text-muted cursor-default"
+                        >
+                            <Icon
+                                name="fa-brands:discord"
+                                class="w-5 h-5 text-accent-violet"
+                            />
+                            <span data-i18n="contact.discord"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</MainLayout>

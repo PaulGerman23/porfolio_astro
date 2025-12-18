@@ -1,0 +1,79 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    class="min-h-screen flex flex-col md:flex-row items-center gap-12 relative overflow-hidden pt-20"
+>
+    <!-- Content -->
+    <div class="flex-1 flex flex-col gap-6 z-10">
+        <span
+            class="text-accent-violet font-mono text-2xl mb-2 block"
+            data-i18n="hero.greeting"></span>
+
+        <h1
+            class="text-4xl md:text-5xl font-bold leading-tight"
+            data-i18n="hero.title"
+        >
+        </h1>
+
+        <h2
+            class="text-lg md:text-2xl font-medium text-accent-gold"
+            data-i18n="hero.degree"
+        >
+        </h2>
+
+        <p
+            class="text-text-muted text-base md:text-lg max-w-lg mt-2"
+            data-i18n="hero.subtitle"
+        >
+        </p>
+
+        <div class="mt-4">
+            <a
+                href="/contact"
+                class="px-6 py-3 border border-accent-violet text-white font-mono hover:bg-accent-violet/20 transition-colors inline-block"
+                data-i18n="hero.cta"></a>
+        </div>
+    </div>
+
+    <!-- Visual/Image -->
+    <div class="flex-1 relative flex justify-center items-center">
+        <div class="relative z-10">
+            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
+                <!-- Avatar/Silhouette -->
+                <div
+                    class="w-full h-full bg-gradient-to-b from-accent-violet/20 to-transparent rounded-full overflow-hidden border-2 border-accent-violet/50 relative"
+                >
+                    <Icon
+                        name="mdi:account"
+                        class="w-full h-full text-text-muted absolute bottom-0 translate-y-4"
+                    />
+                </div>
+
+                <!-- Status overlay -->
+                <div class="absolute bottom-4 -right-4 group">
+                    <div
+                        class="relative overflow-hidden rounded-full p-[1px] focus:outline-none"
+                    >
+                        <span
+                            class="absolute inset-[-1000%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#0f1116_0%,#b38fff_50%,#0f1116_100%)]"
+                        ></span>
+
+                        <div
+                            class="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-bg-main px-3 py-1 text-sm font-medium text-text-main backdrop-blur-3xl"
+                        >
+                            <div
+                                class="w-2 h-2 mr-2 rounded-full bg-green-500 animate-pulse"
+                            >
+                            </div>
+                            <span
+                                class="text-xs font-mono font-bold"
+                                data-i18n="hero.status"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

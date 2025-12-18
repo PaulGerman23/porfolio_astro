@@ -1,0 +1,27 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { skills } from "../data/skills";
+---
+
+<MainLayout title="Skills | Paul German">
+    <section class="py-12" id="skills">
+        <SectionTitle title="habilidades" i18nKey="nav.skills" />
+        <p class="text-text-muted mb-8" data-i18n="skills.subtitle"></p>
+
+        <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start"
+        >
+            <SkillCard title="Languages" items={skills.languages} />
+            <SkillCard
+                title="Databases"
+                items={skills.databases}
+                layout="stack"
+            />
+            <SkillCard title="Tools" items={skills.tools} />
+            <SkillCard title="Frameworks" items={skills.frameworks} />
+            <SkillCard title="Other" items={skills.other} />
+        </div>
+    </section>
+</MainLayout>

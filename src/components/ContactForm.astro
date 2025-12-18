@@ -1,0 +1,52 @@
+---
+
+---
+
+<!-- Replace with your specific Formspree ID -->
+<form
+    action="https://formspree.io/f/xkgdlyed"
+    method="POST"
+    class="flex flex-col gap-4 w-full"
+>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input
+            type="text"
+            name="name"
+            placeholder="Nombre"
+            data-i18n="contact.form.name"
+            required
+            class="bg-white/10 border border-border-subtle p-3 text-text-main placeholder:text-white/50 focus:border-accent-violet focus:outline-none transition-colors"
+        />
+        <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            data-i18n="contact.form.email"
+            required
+            class="bg-white/10 border border-border-subtle p-3 text-text-main placeholder:text-white/50 focus:border-accent-violet focus:outline-none transition-colors"
+        />
+    </div>
+    <input
+        type="text"
+        name="title"
+        placeholder="Título"
+        data-i18n="contact.form.title_input"
+        class="bg-white/10 border border-border-subtle p-3 text-text-main placeholder:text-white/50 focus:border-accent-violet focus:outline-none transition-colors"
+    />
+    <textarea
+        name="message"
+        placeholder="Mensaje"
+        data-i18n="contact.form.message"
+        rows="5"
+        required
+        class="bg-white/10 border border-border-subtle p-3 text-text-main placeholder:text-white/50 focus:border-accent-violet focus:outline-none transition-colors resize-none"
+    ></textarea>
+
+    <button
+        type="submit"
+        class="self-start px-6 py-2 border border-accent-violet text-white font-mono text-sm hover:bg-accent-violet/20 transition-colors cursor-pointer"
+        data-i18n="contact.form.send"
+    >
+        Enviar
+    </button>
+</form>

@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface SkillItem {
+    name: string;
+    icon: string;
+    color: string;
+}
+
+interface Props {
+    title: string;
+    items: SkillItem[];
+    layout?: "grid" | "stack";
+}
+
+const { title, items, layout = "grid" } = Astro.props;
+---
+
+<div class="h-fit card skill-card-border overflow-hidden">
+    <div class="p-2 font-bold text-white w-max pr-4 border-b border-white/10">
+        <span data-i18n={`skills.${title.toLowerCase()}`}>{title}</span>
+    </div>
+    <div
+        class:list={[
+            "p-4",
+            layout === "grid"
+                ? "flex flex-wrap justify-center gap-4"
+                : "flex flex-col items-center justify-center gap-4",
+        ]}
+    >
+        {
+            items.map((item) => (
+                <div class="skill-icon flex flex-col items-center justify-center p-3 gap-2 w-24 h-24">
+                    <Icon
+                        name={item.icon}
+                        class="w-8 h-8 transition-transform group-hover:scale-110"
+                        style={{ color: item.color }}
+                    />
+                    <span class="font-mono text-xs text-center leading-tight text-text-muted">
+                        {item.name}
+                    </span>
+                </div>
+            ))
+        }
+    </div>
+</div>

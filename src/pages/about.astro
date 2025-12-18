@@ -1,0 +1,95 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import DotGrid from "../components/DotGrid.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<MainLayout title="About | Paul German">
+    <div class="py-8">
+        <div class="mb-12">
+            <h1 class="text-3xl font-bold text-white mb-4">
+                <span class="text-accent-violet">/</span><span
+                    data-i18n="about.title"></span>
+            </h1>
+            <p class="text-text-muted" data-i18n="about.subtitle"></p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-12 items-center">
+            <!-- Text Content -->
+            <div class="flex-1 space-y-6 text-text-muted leading-relaxed">
+                <p data-i18n="about.hello"></p>
+                <p data-i18n="about.p1"></p>
+                <p data-i18n="about.p2"></p>
+                <p data-i18n="about.p3"></p>
+            </div>
+
+            <!-- Visual Content -->
+            <div class="flex-1 relative w-full flex justify-center">
+                <div class="relative w-72 h-80">
+                    <div class="absolute -top-4 -left-4">
+                        <DotGrid />
+                    </div>
+                    <div class="absolute -bottom-4 -right-4">
+                        <DotGrid />
+                    </div>
+
+                    <div
+                        class="w-full h-full bg-bg-card border-b border-accent-violet overflow-hidden relative"
+                    >
+                        <Icon
+                            name="mdi:account"
+                            class="w-full h-full text-text-muted opacity-20 absolute bottom-0 translate-y-8"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-24">
+            <SectionTitle title="datos-curiosos" i18nKey="about.funfacts" />
+            <div class="flex flex-wrap gap-4">
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.design"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.solving"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.pizza"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.automation"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.tools"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.location"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.bike"></span>
+                </div>
+                <div
+                    class="border border-border-subtle p-2 text-text-muted font-mono text-sm hover:text-white transition-colors"
+                >
+                    <span data-i18n="fact.learning"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>

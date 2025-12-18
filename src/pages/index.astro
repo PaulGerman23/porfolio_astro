@@ -1,0 +1,96 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.astro";
+import SectionTitle from "../components/SectionTitle.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+import { projects } from "../data/projects";
+import { skills } from "../data/skills";
+import { Icon } from "astro-icon/components";
+
+const featuredProjects = projects.slice(0, 3);
+---
+
+<MainLayout title="Paul German | Full-Stack Developer">
+	<!-- Hero -->
+	<div class="relative">
+		<Hero />
+	</div>
+
+	<!-- Projects -->
+	<section class="py-12" id="projects">
+		<div class="flex justify-between items-center mb-8">
+			<SectionTitle title="proyectos" i18nKey="nav.works" />
+			<a
+				href="/projects"
+				class="text-white hover:text-accent-violet transition-colors font-mono text-sm flex items-center gap-2"
+			>
+				<span data-i18n="home.view_all"></span>
+				<span class="text-accent-violet">~~&gt;</span>
+			</a>
+		</div>
+
+		<div class="flex flex-col gap-8">
+			{featuredProjects.map((project) => <ProjectCard {...project} />)}
+		</div>
+	</section>
+
+	<!-- Skills -->
+	<section class="py-12" id="skills">
+		<SectionTitle title="skills" i18nKey="nav.skills" />
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full items-start"
+		>
+			<SkillCard title="Languages" items={skills.languages} />
+			<SkillCard
+				title="Databases"
+				items={skills.databases}
+				layout="stack"
+			/>
+			<SkillCard title="Tools" items={skills.tools} />
+			<SkillCard title="Frameworks" items={skills.frameworks} />
+			<SkillCard title="Other" items={skills.other} />
+		</div>
+	</section>
+
+	<!-- About-me -->
+	<section class="py-12 relative" id="about">
+		<SectionTitle title="sobre-mi" i18nKey="nav.about" />
+
+		<div class="flex flex-col md:flex-row gap-8 items-start">
+			<!-- Text Content -->
+			<div class="flex-1 text-text-muted space-y-4">
+				<p data-i18n="about.p1"></p>
+				<p data-i18n="about.p2"></p>
+				<p data-i18n="about.p3"></p>
+			</div>
+
+			<!-- Visual Content -->
+			<div
+				class="flex-1 relative min-h-[300px] w-full flex justify-center items-center"
+			>
+				<div class="w-64 h-full relative">
+					<!-- Decorative elements -->
+					<div
+						class="absolute top-0 right-0 transform translate-x-4 -translate-y-4"
+					>
+					</div>
+					<div
+						class="border-b border-accent-violet w-full absolute bottom-0"
+					>
+					</div>
+
+					<!-- Silhouette Image Placeholder -->
+					<div
+						class="w-full h-80 bg-gradient-to-t from-bg-card to-transparent border-l border-r border-border-subtle relative overflow-hidden"
+					>
+						<Icon
+							name="mdi:account"
+							class="w-full h-full text-text-muted opacity-20 absolute bottom-0"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</MainLayout>

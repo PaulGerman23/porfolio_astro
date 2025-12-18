@@ -1,0 +1,44 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import SocialSidebar from "../components/SocialSidebar.astro";
+import "../styles/global.css";
+
+const { title = "Paul German | Full-Stack Developer" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Portfolio of Paul German Mamani, Full-Stack Developer & Systems Analyst"
+        />
+        <title>{title}</title>
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@100..800&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="bg-bg-main text-text-main font-sans min-h-screen flex flex-col relative overflow-x-hidden"
+    >
+        <SocialSidebar />
+        <Navbar />
+        <main
+            class="flex-grow container-custom w-full py-8 md:py-12 z-10 relative"
+        >
+            <slot />
+        </main>
+        <Footer />
+        <script>
+            import { initI18n } from "../scripts/i18n";
+            initI18n();
+        </script>
+    </body>
+</html>
