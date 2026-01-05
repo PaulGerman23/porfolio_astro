@@ -13,7 +13,7 @@ export const translations = {
         "hero.degree": "Técnico Superior en Análisis de Sistemas y Desarrollo de Software",
         "hero.subtitle": "Diseño y desarrollo soluciones digitales enfocadas en eficiencia, usabilidad y resultados comerciales.",
         "hero.cta": "Contáctame",
-        "hero.status": "Disponible para trabajar",
+        "hero.status": "Disponible",
 
         // Home
         "home.quote": "“Diseñando y construyendo sistemas prácticos enfocados en eficiencia, usabilidad y problemas del mundo real.”",

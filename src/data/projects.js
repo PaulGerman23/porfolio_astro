@@ -1,12 +1,12 @@
 export const projects = [
     {
         id: "motoshop",
-        title: "MotoShop / Linq CRM",
+        title: "Linq CRM",
         description: "Full system for managing motorcycle parts sales, inventory, POS, purchases, suppliers, users, permissions, cash registers, interest calculations, mixed payments and more.",
         tech: ["Django", "Python", "SQLite", "MySQL", "Bootstrap"],
         link: "https://github.com/PaulGerman23/motoshop",
         github: "https://github.com/PaulGerman23/motoshop",
-        image: "/images/chertnodes.jpg", // Placeholder - User did not provide images
+        image: "/images/LinCRM.png",
         category: "complete-apps"
     },
     {
@@ -16,7 +16,7 @@ export const projects = [
         tech: [".NET MVC", "SQL Server"],
         link: "https://github.com/PaulGerman23",
         github: "https://github.com/PaulGerman23",
-        image: "/images/kahoot.jpg", // Placeholder
+        image: "/images/Fixture.png",
         category: "complete-apps"
     },
     {
@@ -26,8 +26,9 @@ export const projects = [
         tech: ["Flutter", "Dart", "SQLite"],
         link: "https://github.com/PaulGerman23",
         github: "https://github.com/PaulGerman23",
-        image: "/images/protectx.jpg", // Placeholder
-        category: "complete-apps"
+        image: "/images/charades.jpg",
+        category: "complete-apps",
+        isVertical: true
     },
     {
         id: "inventory",
@@ -36,7 +37,7 @@ export const projects = [
         tech: ["Python", "Tkinter", "SQLite"],
         link: "#",
         github: "#",
-        image: "/images/kotik.jpg", // Placeholder
+        image: "/images/cliente_creditos.png",
         category: "complete-apps"
     }
 ];
