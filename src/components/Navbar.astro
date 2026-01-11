@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 
+// (Mantén tu lógica de navLinks existente aquí...)
 const navLinks = [
     { name: "#home", href: "/" },
     { name: "#works", href: "/projects" },
@@ -12,191 +13,70 @@ const navLinks = [
 
 <header
     id="main-header"
-    class="w-full py-6 md:py-8 z-50 sticky top-0 transition-all duration-300"
+    class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent"
 >
-    <div class="container-custom flex justify-between items-center">
-        <!-- Logo -->
+    <div class="container-custom py-4 flex justify-between items-center">
         <a
             href="/"
-            class="flex items-center gap-2 font-bold text-white text-lg hover:opacity-80 transition-opacity"
+            class="flex items-center gap-2 font-bold text-white text-xl tracking-tight group"
         >
-            <Icon name="mdi:code-braces" class="w-6 h-6 text-accent-violet" />
-            <span>Paul</span>
+            <div
+                class="p-1.5 rounded-lg bg-accent-violet/10 group-hover:bg-accent-violet/20 transition-colors border border-accent-violet/20"
+            >
+                <Icon
+                    name="mdi:code-braces"
+                    class="w-5 h-5 text-accent-violet"
+                />
+            </div>
+            <span>Paul<span class="text-accent-violet">.dev</span></span>
         </a>
 
-        <!-- Desktop Menu -->
-        <nav class="hidden md:flex items-center gap-8">
-            <a
-                href="/"
-                class="text-text-muted hover:text-white transition-colors font-mono text-sm"
-            >
-                <span data-i18n="nav.home"></span>
-            </a>
-            <a
-                href="/projects"
-                class="text-text-muted hover:text-white transition-colors font-mono text-sm"
-            >
-                <span data-i18n="nav.works"></span>
-            </a>
-            <a
-                href="/#about"
-                class="text-text-muted hover:text-white transition-colors font-mono text-sm"
-            >
-                <span data-i18n="nav.about"></span>
-            </a>
-            <a
-                href="/skills"
-                class="text-text-muted hover:text-white transition-colors font-mono text-sm"
-            >
-                <span data-i18n="nav.skills"></span>
-            </a>
-            <a
-                href="/contact"
-                class="text-text-muted hover:text-white transition-colors font-mono text-sm"
-            >
-                <span data-i18n="nav.contacts"></span>
-            </a>
-
+        <nav class="hidden md:flex items-center gap-1">
             <div
-                class="flex items-center gap-4 border-l border-text-muted/20 pl-4 ml-4"
+                class="flex bg-white/5 backdrop-blur-md rounded-full px-2 py-1 border border-white/5"
             >
-                <button
-                    class="lang-toggle flex items-center gap-1 text-text-muted font-mono text-sm hover:text-white transition-colors cursor-pointer"
+                <a
+                    href="/"
+                    class="px-4 py-1.5 text-sm text-text-muted hover:text-white hover:bg-white/5 rounded-full transition-all"
+                    data-i18n="nav.home">Inicio</a
                 >
-                    <span class="lang-text">ES</span>
-                    <Icon name="mdi:chevron-down" class="w-4 h-4" />
-                </button>
+                <a
+                    href="/#projects"
+                    class="px-4 py-1.5 text-sm text-text-muted hover:text-white hover:bg-white/5 rounded-full transition-all"
+                    data-i18n="nav.works">Proyectos</a
+                >
+                <a
+                    href="/#about"
+                    class="px-4 py-1.5 text-sm text-text-muted hover:text-white hover:bg-white/5 rounded-full transition-all"
+                    data-i18n="nav.about">Sobre mí</a
+                >
+                <a
+                    href="/skills"
+                    class="px-4 py-1.5 text-sm text-text-muted hover:text-white hover:bg-white/5 rounded-full transition-all"
+                    data-i18n="nav.skills">Habilidades</a
+                >
+            </div>
+
+            <div class="ml-4 pl-4 border-l border-white/10">
+                <a
+                    href="/contact"
+                    class="px-5 py-2 text-sm bg-white text-black font-semibold rounded-full hover:bg-accent-light transition-colors"
+                    data-i18n="nav.contacts">Contacto</a
+                >
             </div>
         </nav>
 
-        <!-- Mobile Button -->
         <button id="mobile-menu-btn" class="md:hidden text-white p-2">
             <Icon name="mdi:menu" class="w-8 h-8" />
         </button>
     </div>
-
-    <!-- Mobile Menu Overlay -->
-    <div
-        id="mobile-menu"
-        class="fixed inset-0 z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col p-8"
-        style="background: rgba(15, 17, 22, 0.98); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);"
-    >
-        <div class="flex justify-between items-center mb-12">
-            <a
-                href="/"
-                class="flex items-center gap-2 font-bold text-white text-lg"
-            >
-                <Icon
-                    name="mdi:code-braces"
-                    class="w-6 h-6 text-accent-violet"
-                />
-                <span>Paul</span>
-            </a>
-            <div class="flex items-center gap-4">
-                <button id="close-menu-btn" class="text-white p-2">
-                    <Icon name="mdi:close" class="w-8 h-8" />
-                </button>
-            </div>
-        </div>
-
-        <nav class="flex flex-col gap-8 text-2xl">
-            <a
-                href="/"
-                class="text-text-muted hover:text-white transition-colors font-mono mobile-link"
-            >
-                <span data-i18n="nav.home"></span>
-            </a>
-            <a
-                href="/projects"
-                class="text-text-muted hover:text-white transition-colors font-mono mobile-link"
-            >
-                <span data-i18n="nav.works"></span>
-            </a>
-            <a
-                href="/#about"
-                class="text-text-muted hover:text-white transition-colors font-mono mobile-link"
-            >
-                <span data-i18n="nav.about"></span>
-            </a>
-            <a
-                href="/skills"
-                class="text-text-muted hover:text-white transition-colors font-mono mobile-link"
-            >
-                <span data-i18n="nav.skills"></span>
-            </a>
-            <a
-                href="/contact"
-                class="text-text-muted hover:text-white transition-colors font-mono mobile-link"
-            >
-                <span data-i18n="nav.contacts"></span>
-            </a>
-        </nav>
-
-        <div class="mt-auto flex gap-4 justify-center">
-            <a href="#" class="text-text-muted hover:text-white">
-                <Icon name="fa-brands:github" class="w-8 h-8" />
-            </a>
-            <a href="#" class="text-text-muted hover:text-white">
-                <Icon name="fa-brands:linkedin" class="w-8 h-8" />
-            </a>
-        </div>
-    </div>
 </header>
 
-<script>
-    const menuBtn = document.getElementById("mobile-menu-btn");
-    const closeBtn = document.getElementById("close-menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const links = document.querySelectorAll(".mobile-link");
-    const header = document.getElementById("main-header");
-
-    function toggleMenu() {
-        mobileMenu?.classList.toggle("translate-x-full");
-        document.body.classList.toggle("overflow-hidden");
+<style>
+    /* Estilo para cuando se hace scroll */
+    .navbar-scrolled {
+        background: rgba(10, 11, 16, 0.8);
+        backdrop-filter: blur(12px);
+        border-bottom-color: rgba(255, 255, 255, 0.05);
     }
-
-    menuBtn?.addEventListener("click", toggleMenu);
-    closeBtn?.addEventListener("click", toggleMenu);
-
-    links.forEach((link) => {
-        link.addEventListener("click", toggleMenu);
-    });
-
-    // Scroll animation for navbar with progressive line
-    function handleScroll() {
-        const scrollY = window.scrollY;
-        const documentHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-        const scrollProgress =
-            documentHeight > 0 ? (scrollY / documentHeight) * 100 : 0;
-
-        // Reset step classes
-        header?.classList.remove(
-            "line-step-1",
-            "line-step-2",
-            "line-step-3",
-            "line-step-4",
-        );
-
-        // Activate effects with minimal scroll (10px)
-        if (scrollY > 10) {
-            header?.classList.add("navbar-scrolled");
-
-            // Calculate step based on scroll progress
-            if (scrollProgress >= 75) {
-                header?.classList.add("line-step-4"); // 100% width
-            } else if (scrollProgress >= 50) {
-                header?.classList.add("line-step-3"); // 75% width
-            } else if (scrollProgress >= 25) {
-                header?.classList.add("line-step-2"); // 50% width
-            } else {
-                header?.classList.add("line-step-1"); // 25% width
-            }
-        } else {
-            header?.classList.remove("navbar-scrolled");
-        }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll(); // Check initial state
-</script>
+</style>

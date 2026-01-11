@@ -21,6 +21,20 @@
 
     /* Additional accents */
     --accent-gold: #fef08a;
+
+    /* Grid Background */
+    --grid-color: rgba(255, 255, 255, 0.08);
+    --grid-size: 50px;
+  }
+}
+
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: var(--grid-size) var(--grid-size);
   }
 }
 
@@ -32,6 +46,7 @@
   --color-border-subtle: var(--border-color);
   --color-accent-violet: var(--accent);
   --color-accent-gold: var(--accent-gold);
+  --color-grid: var(--grid-color);
 
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
@@ -52,9 +67,23 @@
   body {
     min-height: 100vh;
     background: linear-gradient(120deg, var(--bg1), var(--bg2), var(--bg3), var(--bg2), var(--bg1));
-    background-size: 300% 300%;
-    animation: gradientMove 18s ease-in-out infinite;
     color: #ffffff;
+    position: relative;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+    background-size: var(--grid-size) var(--grid-size);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    pointer-events: none;
+    /* animation: moveGrid 4s linear infinite; */
   }
 
   @keyframes gradientMove {

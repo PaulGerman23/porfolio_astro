@@ -26,9 +26,8 @@ export const projects = [
         tech: ["Flutter", "Dart", "SQLite"],
         link: "https://github.com/PaulGerman23",
         github: "https://github.com/PaulGerman23",
-        image: "/images/charades.jpg",
-        category: "complete-apps",
-        isVertical: true
+        image: "/images/charades.png",
+        category: "complete-apps"
     },
     {
         id: "inventory",

@@ -63,7 +63,7 @@ export const translations = {
         "projects.small": "proyectos-pequeños",
 
         // Project Descriptions (Fallback/Keys)
-        "project.motoshop.desc": "Sistema completo para gestión de venta de repuestos de motos, inventario, punto de venta, compras, proveedores, usuarios, permisos, cajas, cálculo de intereses, pagos mixtos y más.",
+        "project.motoshop.desc": "Sistema completo para gestión de venta, inventario, punto de venta, compras, proveedores, usuarios, permisos, cajas, cálculo de intereses, pagos mixtos y más.",
         "project.robotics.desc": "Generador de partidos para competencias de robótica con categorías, creación de partidos, tabla de posiciones, repechajes y lógica de llaves automatizada.",
         "project.explorer.desc": "Juego móvil desarrollado en Flutter con SQLite. Incluye categorías, lógica de juego, animaciones y bancos de preguntas.",
         "project.inventory.desc": "Sistema de control de inventario construido durante práctica profesional, gestionando stock de productos, categorías, movimientos y reportes.",

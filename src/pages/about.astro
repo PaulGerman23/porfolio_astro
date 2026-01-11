@@ -3,6 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 import SectionTitle from "../components/SectionTitle.astro";
 import DotGrid from "../components/DotGrid.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import profileImage from "../image/perfil_3.jpg";
 ---
 
 <MainLayout title="About | Paul German">
@@ -35,11 +37,17 @@ import { Icon } from "astro-icon/components";
                     </div>
 
                     <div
-                        class="w-full h-full bg-bg-card border-b border-accent-violet overflow-hidden relative"
+                        class="w-full h-full bg-bg-card/50 border-2 border-accent-violet shadow-[0_0_20px_rgba(124,58,237,0.3)] overflow-hidden relative rounded-lg backdrop-blur-sm"
                     >
-                        <Icon
-                            name="mdi:account"
-                            class="w-full h-full text-text-muted opacity-20 absolute bottom-0 translate-y-8"
+                        <div
+                            class="absolute inset-0 bg-gradient-to-b from-transparent to-accent-violet/10"
+                        >
+                        </div>
+                        <Image
+                            src={profileImage}
+                            alt="Paul German"
+                            class="w-full h-full object-cover object-top"
+                            loading="eager"
                         />
                     </div>
                 </div>

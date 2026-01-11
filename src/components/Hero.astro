@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import profileImage from "../image/perfil_4.jpg";
 ---
 
 <section
@@ -39,20 +41,34 @@ import { Icon } from "astro-icon/components";
 
     <!-- Visual/Image -->
     <div class="flex-1 relative flex justify-center items-center">
-        <div class="relative z-10">
-            <div class="relative w-64 h-64 md:w-80 md:h-80 mx-auto">
-                <!-- Avatar/Silhouette -->
+        <div class="relative z-10 group">
+            <!-- Background Glow/Blob -->
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-accent-violet/20 blur-3xl rounded-full -z-10"
+            >
+            </div>
+
+            <div
+                class="relative w-64 h-64 md:w-80 md:h-80 mx-auto animate-float"
+            >
+                <!-- Avatar/Image -->
                 <div
-                    class="w-full h-full bg-gradient-to-b from-accent-violet/20 to-transparent rounded-full overflow-hidden border-2 border-accent-violet/50 relative"
+                    class="w-full h-full relative z-10 rounded-full p-1 bg-gradient-to-tr from-accent-violet to-accent-gold shadow-[0_0_30px_rgba(124,58,237,0.3)]"
                 >
-                    <Icon
-                        name="mdi:account"
-                        class="w-full h-full text-text-muted absolute bottom-0 translate-y-4"
-                    />
+                    <div
+                        class="w-full h-full rounded-full overflow-hidden bg-bg-main/50 backdrop-blur-sm"
+                    >
+                        <Image
+                            src={profileImage}
+                            alt="Profile"
+                            class="w-full h-full object-cover"
+                            loading="eager"
+                        />
+                    </div>
                 </div>
 
                 <!-- Status overlay -->
-                <div class="absolute bottom-4 -right-4 group">
+                <div class="absolute bottom-4 -right-4 group z-20">
                     <div
                         class="relative overflow-hidden rounded-full p-[1px] focus:outline-none"
                     >
@@ -77,3 +93,26 @@ import { Icon } from "astro-icon/components";
         </div>
     </div>
 </section>
+
+<style>
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-15px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    /* Optional: Add a subtle mask if the image cuts off abruptly at the bottom */
+    .mask-image-gradient {
+        mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+    }
+</style>

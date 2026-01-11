@@ -12,7 +12,6 @@ export const skills = {
         { name: ".NET", icon: "simple-icons:dotnet", color: "#6f49f9ff" },
         { name: "Flutter", icon: "simple-icons:flutter", color: "#02569B" },
         { name: "Bootstrap", icon: "simple-icons:bootstrap", color: "#7952B3" },
-        { name: "CustomTkinter", icon: "mdi:widgets", color: "#4A5568" }
     ],
     databases: [
         { name: "MySQL", icon: "simple-icons:mysql", color: "#4479A1" },
